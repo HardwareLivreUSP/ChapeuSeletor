@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ChapeuSeletor2</string>
+    <string name="title_activity_main_bluetooth">MainBluetoothActivity</string>
+    <string name="textView01">Teste</string>
+    <string name="statusMessage">Status</string>
+    <string name="hello_world">Hello World</string>
+    <string name="dispositivos_pareados">Dispositivos\n Pareados</string>
+    <string name="title_activity_dispositivos_pareados">DispositivosPareados</string>
+    <string name="processo">...</string>
+    <string name="descoberta">Iniciar Descoberta \n De Dispositivos</string>
+    <string name="title_activity_dispositivos_descobertos">DispositivosDescobertos</string>
+    <string name="habilitar_visibilidade">Habilitar \nVisibilidade</string>
+    <string name="encerrar">Encerrar\nconexão</string>
+    <string name="modo_servidor">Esperar\nconexão</string>
+    <string name="enviar_mensagem">Enviar\nmensagem</string>
+    <string name="cabecalho_mensagens">Mensagens\n</string>
+    <string name="grifinoria">Grifinória</string>
+    <string name="corvinal">Corvinal</string>
+    <string name="sonserina">Sonserina</string>
+    <string name="lufalufa">Lufa-lufa</string>
+    <string name="aleatorio">Casa aleatória</string>
+    <string name="conjunto">Conjunto\nquasi-aleatorio</string>
+    <string name="sortear_proximo">Sortear\npróximo</string>
+</resources>
