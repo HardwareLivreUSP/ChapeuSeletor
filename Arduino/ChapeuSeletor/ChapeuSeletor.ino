@@ -49,22 +49,22 @@ void setup() {
   Serial.begin(115200);
   bluetoothSerial.begin(9600);
   mp3Serial.begin(9600);
-  #ifdef DEBUG
-    Serial.println(F("DFRobot DFPlayer Mini Demo"));
-    Serial.println(F("Initializing DFPlayer ... (May take 3~5 seconds)"));
-    if (!dfMP3player.begin(mp3Serial)) {  //Use softwareSerial to communicate with mp3.
-      Serial.println(F("Unable to begin:"));
-      Serial.println(F("1.Please recheck the connection!"));
-      Serial.println(F("2.Please insert the SD card!"));
-      while(true);
-    }
-    Serial.println(F("DFPlayer Mini online."));
-  #endif
+  Serial.println(F("Initializing DFPlayer ... (May take 3~5 seconds)"));
+  if (!dfMP3player.begin(mp3Serial)) {  //Use softwareSerial to communicate with mp3.
+    Serial.println(F("Unable to begin:"));
+    Serial.println(F("1.Please recheck the connection!"));
+    Serial.println(F("2.Please insert the SD card!"));
+    while(true);
+  }
+  Serial.println(F("DFPlayer Mini online."));
   delay(2000);
-  dfMP3player.volume(30);  //Define o volume de 30 para o MP3 em um escala de 0 a 30
+  dfMP3player.volume(20);  //Define o volume de 30 para o MP3 em um escala de 0 a 30
   //Definindo a instância de SoftwareSerial do bluetooth como ativa
   //para poder receber mensagens pelo módulo bluetooth.
   bluetoothSerial.listen();
+  #ifdef DEBUG
+    Serial.println("Chapeu Seletor ativo");
+  #endif
 }
 
 /**
