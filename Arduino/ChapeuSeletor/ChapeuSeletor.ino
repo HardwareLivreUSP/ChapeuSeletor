@@ -14,6 +14,8 @@
 
 
 //#define DEBUG
+#define POS_INICIAL 150
+#define POS_FINAL 180
 
  
 /* Definição de um objeto SoftwareSerial para a comunicação com o módulo Bluetooth.
@@ -92,11 +94,11 @@ void loop() {
   //da nossa serial. Se houver bytes disponíveis, significa 
   //que o Android enviou algo, então faremos a leitura do 
   //novo caractere e adicionamos ao final da string dados.
-  #ifdef DEBUG
-    if(bluetoothSerial.available() <= 0) {
-      Serial.println("Nada a ser lido");
-    }
-  #endif
+  //#ifdef DEBUG
+  //  if(bluetoothSerial.available() <= 0) {
+  //    Serial.println("Nada a ser lido");
+  //  }
+  //#endif
   while(bluetoothSerial.available() > 0) {
     dados = char(bluetoothSerial.read());
     #ifdef DEBUG
@@ -116,7 +118,7 @@ void loop() {
       #endif
       dfMP3player.playFolder(1, 1);
       delay(200); // delay para ajustar o instante do som com o movimento da boca
-      moveServo(servo, 160, 176, 3);
+      moveServo(servo, POS_INICIAL, POS_FINAL, 3);//160 e 176
     } else if(dados == "c") {
       mp3Serial.listen();
       #ifdef DEBUG
@@ -126,7 +128,7 @@ void loop() {
       #endif
       dfMP3player.playFolder(1, 2);
       delay(200); // delay para ajustar o instante do som com o movimento da boca
-      moveServo(servo, 160, 176, 3);
+      moveServo(servo, POS_INICIAL, POS_FINAL, 3);
     } else if(dados == "s") {
       mp3Serial.listen();
       #ifdef DEBUG
@@ -136,7 +138,7 @@ void loop() {
       #endif
       dfMP3player.playFolder(1, 3);
       delay(200); // delay para ajustar o instante do som com o movimento da boca
-      moveServo(servo, 160, 176, 2);
+      moveServo(servo, POS_INICIAL, POS_FINAL, 2);
     } else if(dados == "l") {
       mp3Serial.listen();
       #ifdef DEBUG
@@ -146,7 +148,7 @@ void loop() {
       #endif
       dfMP3player.playFolder(1, 4);
       delay(200); // delay para ajustar o instante do som com o movimento da boca
-      moveServo(servo, 160, 176, 3);
+      moveServo(servo, POS_INICIAL, POS_FINAL, 3);
     }
     bluetoothSerial.listen();
     mensagem = mensagem + 1;
